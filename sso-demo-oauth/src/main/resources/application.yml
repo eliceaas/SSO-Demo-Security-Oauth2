@@ -1,0 +1,19 @@
+server:
+  port: 8000
+  servlet:
+    context-path: /oa
+  
+spring:
+  application:
+    name: security
+    
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    
+  thymeleaf: 
+    cache: false
+    
+logging:
+  level:
+    root: info

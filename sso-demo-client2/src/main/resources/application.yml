@@ -1,0 +1,32 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /clt2
+  
+spring:
+  application:
+    name: client2
+    
+  thymeleaf: 
+    cache: false
+
+security:
+  oauth2:
+    client:
+      client-id: client2
+      client-secret: secret2
+      userAuthorizationUri: http://localhost:8000/oa/oauth/authorize
+      access-token-uri: http://localhost:8000/oa/oauth/token
+      scope: read, write
+      #pre-established-redirect-uri: http://localhost:8082/clt1/callback #自定义redirect_uri
+      #registered-redirect-uri: http://localhost:8082/clt1/callback #自定义redirect_uri
+      #use-current-uri: false #不使用默认的redirect_uri
+    resource:
+      user-info-uri: http://localhost:8000/oa/user #获取user的地址
+      #jwt:
+      #  key-uri: http://localhost:8000/oa/oauth/token_key #解析jwt令牌所需要密钥的地址
+    
+logging:
+  level:
+    root: info
+      
